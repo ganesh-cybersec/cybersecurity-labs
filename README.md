@@ -109,16 +109,19 @@ Displays system information of the compromised machine.
 Result:
 Linux Metasploitable system identified.
 
-Final Result
+Final Result:
+
 Successfully exploited SMB vulnerability
 Gained remote shell access
 Achieved root-level access on target system 
 
-Learning Outcomes
+Learning Outcomes:
+
 Learned how to perform network scanning using Nmap
 Understood SMB/Samba vulnerabilities
 Practiced exploitation using Metasploit
 Gained hands-on experience in penetration testing workflow
 
-Disclaimer
+Disclaimer:
+
 This lab was conducted in a controlled environment for educatinal purposes only. 
